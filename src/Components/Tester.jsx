@@ -8,6 +8,9 @@ const Tester = () => {
     const [startTime, setStartTime] = useState(null);
     const [wpm, setWpm] = useState(0);
     const [acc, setAcc] = useState(0);
+    function reload(){
+        window.location.reload(false);
+    }
 
     function handleChange(e) {
         if(remain===""){
@@ -65,6 +68,7 @@ const Tester = () => {
         <h1 className='text-4xl'>WPM: {wpm}</h1>
         <h1 className='text-4xl'>Error Count: {errCount}</h1>
         <h1 className='text-4xl'>Accuracy : {acc}</h1>
+        <button className='my-5' onClick={reload}>Reset</button>
       <div className='my-10'>
       <span className='text-slate-500 text-4xl'>{typed}</span>
       <span className='text-4xl'>{remain}</span>
